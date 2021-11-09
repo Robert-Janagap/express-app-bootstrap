@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const errorHandling = require("../lib/errorsHandling");
 const mongoDBURL = require("config").get("mongoURL");
+const chalk = require("chalk")
 
 module.exports = async () => {
   if (mongoDBURL === "" || mongoDBURL === null || mongoDBURL === undefined)
@@ -17,7 +18,7 @@ module.exports = async () => {
   } catch (error) {
     mongoose.connection.close(() => {
       console.error(
-        "error",
+        chalk.bold.red("Error"),
         errorHandling({
           errors: [error],
           message: "Mongoose connection disconnected",

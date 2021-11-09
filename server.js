@@ -8,6 +8,7 @@ const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./swagger.json");
 const compression = require("compression");
 const helmet = require("helmet");
+const chalk = require("./lib/logColor.lib")
 
 const app = express();
 
@@ -47,7 +48,7 @@ require("./routes/v1/index.route")(app);
 const PORT = process.env.PORT || config.get("port");
 
 const listen = app.listen(PORT, () => {
-  console.log("url:", `    http://localhost:${PORT}`);
+  console.log(chalk.blue("url:"), `    http://localhost:${PORT}`);
   console.log("doc:", `    http://localhost:${PORT}/api-docs`);
   console.log("server:", ` ${config.get("server")}`);
 });

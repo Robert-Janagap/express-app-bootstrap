@@ -11,6 +11,7 @@
     "report": "cross-env DEBUG=server:debug NODE_ENV=test mocha ./test/index.test.js --reporter mochawesome --exit"
   },
   "dependencies": {
+    "chalk": "^4.1.1",
     "compression": "^1.7.4",
     "config": "^3.3.6",
     "cors": "^2.8.5",
