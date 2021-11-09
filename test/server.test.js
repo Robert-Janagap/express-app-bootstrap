@@ -26,11 +26,11 @@ let con, db, mongoServer;
 //   if (mongoServer) await mongoServer.stop();
 // });
 
-describe("Mongo Database", () => {
-  it("Should start mongo server", () => {
-    expect(db).to.be.eql(mongoose.connection);
-  });
-});
+// describe("Mongo Database", () => {
+//   it("Should start mongo server", () => {
+//     expect(db).to.be.eql(mongoose.connection);
+//   });
+// });
 
 describe("Server", () => {
   it("Should exist", () => {
