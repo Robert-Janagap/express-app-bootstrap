@@ -8,29 +8,29 @@ const { MongoMemoryServer } = require("mongodb-memory-server");
 const expect = chai.expect;
 let con, db, mongoServer;
 
-// before(async () => {
-//   mongoServer = new MongoMemoryServer();
-//   con = await mongoose.connect(mongoDBURL, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     useCreateIndex: true,
-//     useFindAndModify: false,
-//   });
+before(async () => {
+  mongoServer = new MongoMemoryServer();
+  con = await mongoose.connect(mongoDBURL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  });
 
-//   db = mongoose.connection;
-// });
+  db = mongoose.connection;
+});
 
-// after(async () => {
-//   if (con) con.connection.close();
+after(async () => {
+  if (con) con.connection.close();
 
-//   if (mongoServer) await mongoServer.stop();
-// });
+  if (mongoServer) await mongoServer.stop();
+});
 
-// describe("Mongo Database", () => {
-//   it("Should start mongo server", () => {
-//     expect(db).to.be.eql(mongoose.connection);
-//   });
-// });
+describe("Mongo Database", () => {
+  it("Should start mongo server", () => {
+    expect(db).to.be.eql(mongoose.connection);
+  });
+});
 
 describe("Server", () => {
   it("Should exist", () => {

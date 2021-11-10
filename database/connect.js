@@ -14,7 +14,7 @@ module.exports = async () => {
       useCreateIndex: true,
       useFindAndModify: false,
     });
-    console.log("database:", `${conn.connection.host}`);
+    console.log(chalk.blue("database:"), `${conn.connection.host}`);
   } catch (error) {
     mongoose.connection.close(() => {
       console.error(

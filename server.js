@@ -49,8 +49,8 @@ const PORT = process.env.PORT || config.get("port");
 
 const listen = app.listen(PORT, () => {
   console.log(chalk.blue("url:"), `    http://localhost:${PORT}`);
-  console.log("doc:", `    http://localhost:${PORT}/api-docs`);
-  console.log("server:", ` ${config.get("server")}`);
+  console.log(chalk.blue("doc:"), `    http://localhost:${PORT}/api-docs`);
+  console.log(chalk.blue("server:"), ` ${config.get("server")}`);
 });
 
 module.exports = app;
