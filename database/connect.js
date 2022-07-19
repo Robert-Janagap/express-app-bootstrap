@@ -8,12 +8,7 @@ module.exports = async () => {
     return console.log("database:", `No Connection`);
 
   try {
-    let conn = await mongoose.connect(mongoDBURL, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
-    });
+    let conn = await mongoose.connect(mongoDBURL);
     console.log(chalk.blue("database:"), `${conn.connection.host}`);
   } catch (error) {
     mongoose.connection.close(() => {
